@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Search</title>
+</head>
+<body>
+    <ul>
+        {% for job in jobs_list %}
+            <li>
+                <a href={{ job.url }} target="_blank"=>{{ job.title }}</a>
+                <span> ---------- Firma: {{ job.company }} ---------- Locatie: {{ job.location }}</span>
+            </li>
+        {% endfor %}
+    <ul>
+</body>
+</html>
