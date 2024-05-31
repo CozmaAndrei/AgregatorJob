@@ -4,9 +4,15 @@ import requests
 from bs4 import BeautifulSoup
 
 class Command(BaseCommand):
-    help = 'Fetch job infos from a website and store them in the database'
+    help = 'Fetch job infos from a websites and store them in the database'
 
     def handle(self, *args, **options):
+        self.fetch_jobs()
+    
+    def fetch_jobs(self):
+        self.jobs_on_bestjobs()
+        
+    def jobs_on_bestjobs(self):
         page = 1
         while page <= 50:
             url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
@@ -25,12 +31,13 @@ class Command(BaseCommand):
                         location = 'Necunoscuta'
                     
                     if 'python' in jobs_title.lower():
-                        if not Jobs.objects.filter(url=url).exists():
-                            Jobs.objects.create(title=jobs_title, company=jobs_company, url=url, location=location)
-                        else:
-                            pass
+                        # if not Jobs.objects.filter(url=url).exists():
+                        Jobs.objects.create(title=jobs_title, company=jobs_company, url=url, location=location)
+                    else:
+                        pass
                 
                 page += 1
             else:
                 pass
+
             
