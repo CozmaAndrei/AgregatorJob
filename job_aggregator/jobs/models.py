@@ -11,6 +11,7 @@ class Jobs(models.Model):
         return self.title
     
     class Meta:
+        app_label = 'jobs'
         db_table = 'Jobs'
         verbose_name = 'Job'
     
