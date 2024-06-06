@@ -3,11 +3,16 @@ import requests
 from bs4 import BeautifulSoup
         
 def jobs_on_bestjobs():
+    print("bestjobs ruleaza")
     page = 1
     while page <= 50:
+        print(f'pagina {page}')
         url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
+        print("se citeste url")
         source = requests.get(url)
+        print(source)
         if source.status_code == 200:
+            print("codul este 200!")
             soup = BeautifulSoup(source.content, 'html.parser')
             jobs_list = soup.find_all('div', class_='list-card')
             for job in jobs_list:
@@ -28,7 +33,8 @@ def jobs_on_bestjobs():
             
             page += 1
         else:
-            pass
+            print("codul nu este 200!")
         
 if __name__ == '__main__':
+    print("__name__==__main__ ruleaza in bestjobs")
     jobs_on_bestjobs()
