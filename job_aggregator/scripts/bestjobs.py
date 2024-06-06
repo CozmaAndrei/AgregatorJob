@@ -7,7 +7,9 @@ def jobs_on_bestjobs():
     while page <= 50:
         url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
         source = requests.get(url)
+        print(source)
         if source.status_code == 200:
+            print("statusul este 200!")
             soup = BeautifulSoup(source.content, 'html.parser')
             jobs_list = soup.find_all('div', class_='list-card')
             for job in jobs_list:
@@ -28,7 +30,7 @@ def jobs_on_bestjobs():
             
             page += 1
         else:
-            pass
+            print("statusul nu este 200!")
         
 if __name__ == '__main__':
     jobs_on_bestjobs()
