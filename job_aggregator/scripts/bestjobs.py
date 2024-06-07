@@ -12,11 +12,7 @@ def jobs_on_bestjobs():
         source = requests.get(url)
         print(source)
         if source.status_code == 200:
-<<<<<<< HEAD
-            print("codul este 200!")
-=======
             print("statusul este 200!")
->>>>>>> e6443de2c5a7c1e7df08fd261b64d4da429da558
             soup = BeautifulSoup(source.content, 'html.parser')
             jobs_list = soup.find_all('div', class_='list-card')
             for job in jobs_list:
@@ -37,11 +33,7 @@ def jobs_on_bestjobs():
             
             page += 1
         else:
-<<<<<<< HEAD
-            print("codul nu este 200!")
-=======
             print("statusul nu este 200!")
->>>>>>> e6443de2c5a7c1e7df08fd261b64d4da429da558
         
 if __name__ == '__main__':
     print("__name__==__main__ ruleaza in bestjobs")
