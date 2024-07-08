@@ -9,7 +9,11 @@ def jobs_on_bestjobs():
         print(f'pagina {page}')
         url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
         print("se citeste url")
-        source = requests.get(url)
+        proxies = {
+            'http': 'http://proxy_ip:proxy_port',
+            'https': 'https://proxy_ip:proxy_port',
+        }
+        source = requests.get(url, proxies=proxies)
         print(source)
         if source.status_code == 200:
             print("statusul este 200!")
