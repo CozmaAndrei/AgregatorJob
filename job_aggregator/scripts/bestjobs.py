@@ -10,17 +10,17 @@ def jobs_on_bestjobs():
     while page <= 200:
         # print(f'pagina {page}')
         url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
-        # print("se citeste url")
-        # proxy_ip = config('PROXY_IP')
-        # proxy_port = config('PROXY_PORT')
-        # username = config('USERNAME')
-        # password = config('PASSWORD')
-        # proxies = {
-        #     'http': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
-        #     'https': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
-        # }
-        # auth = HTTPProxyAuth(username, password)
-        source = requests.get(url)#, proxies=proxies
+        print("se citeste url")
+        proxy_ip = config('PROXY_IP')
+        proxy_port = config('PROXY_PORT')
+        username = config('USERNAME')
+        password = config('PASSWORD')
+        proxies = {
+            'http': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
+            'https': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
+        }
+        auth = HTTPProxyAuth(username, password)
+        source = requests.get(url, proxies=proxies)#
         # print(source)
         if source.status_code == 200:
             # print("statusul este 200!")
@@ -39,7 +39,7 @@ def jobs_on_bestjobs():
                 if 'lucrator' in jobs_title.lower():
                     if not Jobs.objects.filter(url=url).exists():
                         Jobs.objects.create(title=jobs_title, company=jobs_company, url=url, location=location)
-                        # print(f"Am găsit un job: {jobs_title} - {jobs_company} - {location}")
+                        print(f"Am găsit un job: {jobs_title} - {jobs_company} - {location}")
                 else:
                     pass
             
