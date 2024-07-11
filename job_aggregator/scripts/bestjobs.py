@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 def jobs_on_bestjobs():
     # print("bestjobs ruleaza")
     page = 1
-    while page <= 200:
+    while page <= 50:
         # print(f'pagina {page}')
         url = 'https://www.bestjobs.eu/ro/locuri-de-munca/' + str(page)
         print("se citeste url")
