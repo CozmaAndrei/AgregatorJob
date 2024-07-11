@@ -19,8 +19,8 @@ def jobs_on_bestjobs():
             'http': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
             'https': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
         }
-        auth = HTTPProxyAuth(username, password)
-        source = requests.get(url, proxies=proxies)#
+        auth = HTTPProxyAuth(str(username), str(password))
+        source = requests.get(url, proxies=proxies, auth=auth)#
         # print(source)
         if source.status_code == 200:
             # print("statusul este 200!")
