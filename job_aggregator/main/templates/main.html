@@ -1,17 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Job Search</title>
-</head>
-<body>
-    Running
-    <ul>
-        {% for job in jobs_list %}
-            <li>
-                <a href={{ job.url }} target="_blank"=>{{ job.title }}</a>
-                <span> ---------- Firma: {{ job.company }} ---------- Locatie: {{ job.location }}</span>
-            </li>
-        {% endfor %}
-    <ul>
-</body>
-</html>
+{% extends 'navbar.html'%}
+{% load static %}
+
+{% block main %}
+    <!-- Main Page Section START-->
+    <section id="hero" class="hero section">
+        <div class="hero-bg">
+            <img src="{% static 'assets/img/hero-bg-light.webp'%}" alt="">
+        </div>
+        <div class="container text-center">
+            <div class="d-flex flex-column justify-content-center align-items-center">
+            <h1 data-aos="fade-up">Welcome to <span>PyJobs</span></h1>
+            <p data-aos="fade-up" data-aos-delay="100">Quickly start your project now and set the stage for success<br></p>
+            <img src="{% static 'assets/img/hero-services-img.webp' %}" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
+            </div>
+        </div>
+    </section>
+    <!--Main Page Section END-->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+        <div class="container" data-aos="fade-up">
+            <div class="row gy-4">
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <a href='https://www.bestjobs.eu/' target='blank_'>
+                        <img src="{% static 'assets/img/clients/bestjobs.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div><!-- End Client Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
+                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                    <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
+                </div><!-- End Client Item -->
+            </div>
+        </div>
+    </section><!-- /Clients Section -->
+{% endblock %}
