@@ -2,10 +2,11 @@
 {% load static %}
 
 {% block content%}
-<!-- Services Section -->
+<!--Jobs Section START-->
 <section id="services" class="services section light-background">
     <div class="container">
         <div class="row g-5">
+            <!--Job Item START-->
             {% for job in all_jobs %}
             <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                 <div class="service-item item-cyan position-relative">
@@ -19,22 +20,9 @@
                 </div>
             </div>
             {% endfor %}
-            <!-- End Job Item -->
+            <!--Job Item STOP-->
         </div>
     </div>
 </section>
-<!-- /Services Section -->
-
-    {% comment %} <div class='container'>
-        {% for job in all_jobs %}
-        <div class="card mb-3">
-            <h5 class="card-header">{{ job.title }}</h5>
-            <div class="card-body">
-                <p class="card-text">Firma: {{ job.company }}</p>
-                <p class="card-text">Locatie: {{ job.location }}</p>
-                <a href={{ job.url }} target="_blank" class="btn btn-primary">See Job</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div> {% endcomment %}
+<!--Jobs Section STOP-->
 {% endblock %}
