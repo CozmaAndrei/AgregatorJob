@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block main %}
-    <!-- Main Page Section START-->
+    <!--Main Page Section START-->
     <section id="hero" class="hero section">
         <div class="hero-bg">
             <img src="{% static 'assets/img/hero-bg-light.webp'%}" alt="">
@@ -10,47 +10,58 @@
         <div class="container text-center">
             <div class="d-flex flex-column justify-content-center align-items-center">
             <h1 data-aos="fade-up">Welcome to <span>PyJobs</span></h1>
-            {% comment %} <p data-aos="fade-up" data-aos-delay="100">Quickly start your project now and set the stage for success<br></p> {% endcomment %}
+            <p data-aos="fade-up" data-aos-delay="100">Quickly find the perfect programming job with our platform<br></p>
             <img src="{% static 'assets/img/hero-services-img.webp' %}" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
             </div>
         </div>
     </section>
     <!--Main Page Section END-->
-
-    <!-- Clients Section -->
+    <!--Clients Section START-->
     <section id="clients" class="clients section">
         <div class="container" data-aos="fade-up">
-            <div class="row">
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <div class="row justify-content-center">
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
                     <a href='https://www.bestjobs.eu/' target='blank_'>
                         <img src="{% static 'assets/img/clients/bestjobs.png' %}" class="img-fluid" alt="">
                     </a>
                 </div>
-                <!-- End Client Item -->
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
                     <a href='https://www.ejobs.ro/' target='blank_'>
                         <img src="{% static 'assets/img/clients/ejobs.png' %}" class="img-fluid" alt="">
                     </a>
                 </div>
-                <!-- End Client Item -->
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
                     <a href='https://www.juniors.ro/' target='blank_'>
                         <img src="{% static 'assets/img/clients/juniors.png' %}" class="img-fluid" alt="">
                     </a>
                 </div>
-                <!-- End Client Item -->
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
                     <a href='https://www.hipo.ro/' target='blank_'>
                         <img src="{% static 'assets/img/clients/hipo.png' %}" class="img-fluid" alt="">
                     </a>
-                </div><!-- End Client Item -->
-                {% comment %} <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{% static 'assets/img/clients/juniors.png' %}" class="img-fluid" alt="">
-                </div><!-- End Client Item -->
-                <div class="col-xl-2 col-md-3 col-6 client-logo">
-                    <img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt="">
-                </div><!-- End Client Item --> {% endcomment %}
+                </div>
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
+                    <a href='https://www.jobradar24.ro/' target='blank_'>
+                        <img src="{% static 'assets/img/clients/jobRadar24.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
+                    <a href='https://ro.jooble.org/' target='blank_'>
+                        <img src="{% static 'assets/img/clients/jooble.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
+                    <a href='https://ro.indeed.com/' target='blank_'>
+                        <img src="{% static 'assets/img/clients/indeed.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
+                <div class="col-xl-2 col-md-3 col-4 client-logo">
+                    <a href='https://devjob.ro/' target='blank_'>
+                        <img src="{% static 'assets/img/clients/devJob.png' %}" class="img-fluid" alt="">
+                    </a>
+                </div>
             </div>
         </div>
-    </section><!-- /Clients Section -->
+    </section>
+    <!--Clients Section END-->
 {% endblock %}
