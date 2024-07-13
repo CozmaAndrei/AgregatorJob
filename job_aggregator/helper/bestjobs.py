@@ -1,7 +1,7 @@
 from jobs.models import Jobs
 import requests, time, random
 from decouple import config
-from requests.auth import HTTPProxyAuth
+# from requests.auth import HTTPProxyAuth
 from bs4 import BeautifulSoup
         
 def jobs_on_bestjobs():
@@ -17,8 +17,7 @@ def jobs_on_bestjobs():
             'http': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
             'https': f'http://{username}:{password}@{proxy_ip}:{proxy_port}',
         }
-        # auth = HTTPProxyAuth(str(username), str(password))
-        source = requests.get(url, proxies=proxies)#, proxies=proxies, auth=auth
+        source = requests.get(url, proxies=proxies)
         if source.status_code == 200:
             soup = BeautifulSoup(source.content, 'html.parser')
             bestjobs_list = soup.find_all('div', class_='list-card')
@@ -34,12 +33,11 @@ def jobs_on_bestjobs():
                         location = 'Necunoscuta'
                     if not Jobs.objects.filter(url=url).exists():
                         Jobs.objects.create(title=jobs_title, company=jobs_company, url=url, location=location)
-                        # print(f"Am găsit un job: {jobs_title} - {jobs_company} - {location}")
             time.sleep(random.randint(10, 20))
             page += 1
         elif source.status_code == 429:
             print("Received status code 429, sleeping for 60 seconds")
-            time.sleep(60)  # Așteaptă 60 de secunde înainte de a încerca din nou
+            time.sleep(60)
         else:
             print(f"Failed to retrieve page {page}. Status code: {source.status_code}")
             break

@@ -18,7 +18,7 @@ from helper.juniors import jobs_on_juniors
 def run_scripts():
     jobs_on_ejobs()
     jobs_on_bestjobs()
-    # jobs_on_juniors()
+    jobs_on_juniors()
 
 
 if __name__ == '__main__':
